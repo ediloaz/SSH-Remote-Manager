@@ -15,10 +15,6 @@ function EscribirLog {
 }
 
 
-	
-
-
-
 # --------
 # Opción 1
 function AgregarUsuario {
@@ -39,7 +35,7 @@ function AgregarUsuario {
 	if [ -z $GID_ADICIONALES ];
 	then
 		EscribirLog "Opción:Agregar Usuario > Agregado:$LOGIN_NAME" "none" "useradd -c $COMENTARIO -u $UID_NUMBER -g $GID_PRINCIPAL $LOGIN_NAME;";
-		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK useradd -c "$COMENTARIO" -u $UID_NUMBER -g $GID_PRINCIPAL $LOGIN_NAME;
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK useradd -c \"$COMENTARIO\" -u $UID_NUMBER -g $GID_PRINCIPAL $LOGIN_NAME;
 	else
 		EscribirLog "Opción:Agregar Usuario >  Agregado:$LOGIN_NAME" "none" "useradd -c $COMENTARIO -u $UID_NUMBER -g $GID_PRINCIPAL -G $GID_ADICIONALES $LOGIN_NAME;";
 		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK useradd -c \"$COMENTARIO\" -u $UID_NUMBER -g $GID_PRINCIPAL -G $GID_ADICIONALES $LOGIN_NAME;
@@ -295,14 +291,12 @@ function MostrarMenu {
 
 
 clear;
-
 # Variables de colores
 WHITE="\033[1;35m";
 BOLD="\e[1m";
 NOTBOLD="\e[21m";
 RESET="\e[0m";
 BLINK="\e[5m";
-
 # Inicio de la ejecución en pantalla
 echo " De la máquina remota:";
 SALIR=0;

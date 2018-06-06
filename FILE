@@ -285,3 +285,43 @@ mar 05 jun 2018 19:24:49  |  (E) Se inició el programa || (I) None || (c) None
 mar 05 jun 2018 19:53:17  |  (E) Se inició el programa || (I) None || (c) None
 mar 05 jun 2018 19:53:39  |  (E) Se inició el programa || (I) None || (c) None
 mar 05 jun 2018 19:53:51  |  (E) Conexión establecida a la máquina remota || (I) None || (c) sshpass -p 3121 ssh root@192.168.100.4 id -u root
+mar 05 jun 2018 22:00:00  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 22:00:14  |  (E) No se pudo conectar a la máquina remota || (I) None || (c) sshpass -p 3121 ssh root@192.168.100.4 id -u root
+mar 05 jun 2018 22:01:56  |  (E) No se pudo conectar a la máquina remota || (I) None || (c) sshpass -p 3121 ssh root@192.168.100.4 id -u root
+mar 05 jun 2018 22:02:23  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 22:02:46  |  (E) No se pudo conectar a la máquina remota || (I) None || (c) sshpass -p 3121 ssh root@192.168.100.4 id -u root
+mar 05 jun 2018 22:03:54  |  (E) No se pudo conectar a la máquina remota || (I) None || (c) sshpass -p 3121 ssh root@192.168.100.4 id -u root
+mar 05 jun 2018 22:04:06  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 22:04:08  |  (E) No se pudo conectar a la máquina remota || (I) None || (c) sshpass -p 3121 ssh root@192.168.100.4 id -u root
+mar 05 jun 2018 22:04:30  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 22:04:43  |  (E) Conexión establecida a la máquina remota || (I) None || (c) sshpass -p 3121 ssh root@192.168.100.4 id -u root
+mar 05 jun 2018 22:05:24  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 22:05:56  |  (E) Opción:Agregar Usuario > Agregado:usuario001 || (I) none || (c) useradd -c Soy el usuario 1 -u 7001 -g 3000 usuario001;
+mar 05 jun 2018 22:05:59  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 22:06:33  |  (E) Se digitó una opción no valida || (I) none || (c) none
+mar 05 jun 2018 22:06:33  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 22:06:58  |  (E) Opción:Agregar Usuario > Agregado:user01 || (I) none || (c) useradd -c Soy el usuario 01 -u 1010 -g 3000 user01;
+mar 05 jun 2018 22:07:02  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 22:07:04  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 22:07:19  |  (E) Opción:Agregar Usuario > Agregado: || (I) none || (c) useradd -c  -u  -g  ;
+mar 05 jun 2018 22:07:21  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 22:07:25  |  (E) Opción:Crear grupo || (I) none || (c) none
+mar 05 jun 2018 22:07:37  |  (E) Opción:Crear grupo > Se creó Grupo01 || (I) Grupo01 || (c) groupadd Grupo01 -g 4000;
+mar 05 jun 2018 22:08:30  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 22:08:53  |  (E) Opción:Agregar Usuario > Agregado:user01 || (I) none || (c) useradd -c Usuario 01 -u 1001 -g 4000 user01;
+mar 05 jun 2018 22:08:57  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 22:09:19  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 22:09:33  |  (E) Conexión establecida a la máquina remota || (I) None || (c) sshpass -p 3121 ssh root@192.168.100.4 id -u root
+mar 05 jun 2018 22:10:02  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 22:10:26  |  (E) Opción:Agregar Usuario > Agregado:user001 || (I) none || (c) useradd -c Soy el usuario 001 -u 1001 -g 4000 user001;
+mar 05 jun 2018 22:11:08  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 22:11:31  |  (E) Opción:Modificar Usuario > Usuario escogido: user001 || (I) user001 || (c) none
+mar 05 jun 2018 22:11:44  |  (E) Opción:Modificar Usuario > Campo:Comentario || (I) 2 || (c) none
+mar 05 jun 2018 22:11:53  |  (E) Opción:Modificar Usuario > Campo:Comentario > De Soy el usuario 001 a Usuario 001 || (I) Usuario 001 || (c) usermod -c Usuario 001 user001;;
+mar 05 jun 2018 22:12:46  |  (E) Opción:Establecer Contraseña || (I) none || (c) none
+mar 05 jun 2018 22:13:00  |  (E) Opción:Establecer Contraseña > Se estableció la contraseña para user001 || (I) none || (c) passwd user001;
+mar 05 jun 2018 22:14:10  |  (E) Opción:Borrar Usuario || (I) user001 || (c) none
+mar 05 jun 2018 22:17:24  |  (E) Opción:Borrar Usuario > Se borró user001 || (I) user001 || (c) deluser --remove-home user001;
+mar 05 jun 2018 22:18:02  |  (E) Opción:Borrar grupo || (I) none || (c) none
+mar 05 jun 2018 22:18:16  |  (E) Opción:Borrar grupo > Se borró Grupo01 || (I) Grupo01 || (c) groupdel Grupo01;
+mar 05 jun 2018 22:18:58  |  (E) Se cerró el programa || (I) None || (c) None
