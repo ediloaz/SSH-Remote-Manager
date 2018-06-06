@@ -1,0 +1,341 @@
+#! /bin/bash
+
+
+
+# ----------------------
+# Escribe el archivo Log
+function EscribirLog {
+	local FILE="LOG.log";
+	if [ ! -e FILE ]; then
+		echo "Fecha y hora | Evento (E) || Entrada (I) || Comando ejecutado (c)" >> FILE;
+		echo "" >> FILE;
+	fi;
+	
+	echo "$(date +%a)" "$(date +%d)" "$(date +%b)" "$(date +%Y)" "$(date +%H)":"$(date +%M)":"$(date +%S)""  |  (E) $1 || (I) $2 || (c) $3"  >> FILE;
+}
+
+
+	
+
+
+
+# --------
+# Opción 1
+function AgregarUsuario {
+	EscribirLog "Opción:Agregar Usuario" "1" "AgregarUsuario()"
+	echo " Complete el formulario:";
+	read -p "  Nombre para loguear: " LOGIN_NAME;
+	ID_USER="$(sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK id -u $LOGIN_NAME)";
+	if [[ ! $ID_USER -le 1 ]];
+	then
+		echo "   Error: No se puede usar este nombre de usuario, porque ya existe.";
+		return 0;
+	fi
+	COMMAND="useradd";
+	read -p "  Texto comentario: " COMENTARIO;
+	read -p "  UID: " UID_NUMBER;
+	read -p "  GID principal: " GID_PRINCIPAL;
+	read -p "  GID adicionales: " GID_ADICIONALES;
+	if [ -z $GID_ADICIONALES ];
+	then
+		EscribirLog "Opción:Agregar Usuario > Agregado:$LOGIN_NAME" "none" "useradd -c $COMENTARIO -u $UID_NUMBER -g $GID_PRINCIPAL $LOGIN_NAME;";
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK useradd -c "$COMENTARIO" -u $UID_NUMBER -g $GID_PRINCIPAL $LOGIN_NAME;
+	else
+		EscribirLog "Opción:Agregar Usuario >  Agregado:$LOGIN_NAME" "none" "useradd -c $COMENTARIO -u $UID_NUMBER -g $GID_PRINCIPAL -G $GID_ADICIONALES $LOGIN_NAME;";
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK useradd -c \"$COMENTARIO\" -u $UID_NUMBER -g $GID_PRINCIPAL -G $GID_ADICIONALES $LOGIN_NAME;
+	fi
+	echo;
+	ID_USER="$(sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK id -u $LOGIN_NAME)";
+	if [ $ID_USER -eq $UID_NUMBER ]; 
+	then
+		echo " Usuario $LOGIN_NAME creado correctamente."
+	else
+		EscribirLog "Opción:Agregar Usuario > No se pudo agregar" "none" "none";
+		echo " No se pudo crear el usuario"
+	fi
+	echo
+}
+
+
+# --------
+# Opción 2
+function ModificarUsuario {
+	EscribirLog "Opción:Modificar Usuario" "2" "ModificarUsuario()"
+	read -p " Usuario a modificar: " USER;
+	echo;
+	ID_USER="$(sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK id -u $USER)";
+	if [ $ID_USER -gt 1 ]; 
+	then
+		EscribirLog "Opción:Modificar Usuario > Usuario escogido: $USER" "$USER" "none"
+		echo -e " $BOLD Campos posibles para modificar: $NOTBOLD";
+		echo;
+		echo "  [1] Nombre para loguear"
+		echo "  [2] Texto comentario"
+		echo "  [3] UID"
+		echo "  [4] GID principal"
+		echo "  [5] GID adicionales"
+		echo "  [6] Shell"
+		echo "  [7] Directorio"
+		echo;
+		read -p "  Ingrese una opción: " OPCION
+		echo;
+		case $OPCION in
+		1)
+		EscribirLog "Opción:Modificar Usuario > Modificar: Nombre para loguear" "1" "none"
+		read -p "  Nuevo nombre para loguear: " LOGIN_NAME;
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK usermod -l $LOGIN_NAME $USER;
+		EscribirLog "Opción:Modificar Usuario > Se modificó el nombre de usuario de $USER a $LOGIN_NAME" "$LOGIN_NAME" "usermod -l $LOGIN_NAME $USER;";;
+		
+		2)
+		EscribirLog "Opción:Modificar Usuario > Campo:Comentario" "2" "none"
+		COMENTARIO_ANTERIOR="$(sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK getent passwd $USER | cut -d: -f5)";
+		read -p "  Nuevo texto comentario: " COMENTARIO;
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK usermod -c \"$COMENTARIO\" $USER;
+		EscribirLog "Opción:Modificar Usuario > Campo:Comentario > De $COMENTARIO_ANTERIOR a $COMENTARIO" "$COMENTARIO" "usermod -c $COMENTARIO $USER;;";;
+		
+		3)
+		EscribirLog "Opción:Modificar Usuario > Campo:Número UID" "3" "none"
+		UID_ANTERIOR="$(getent passwd $USER | cut -d: -f3)";
+		read -p "  Nuevo UID: " UID_NUMBER;
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK usermod -u $UID_NUMBER $USER;
+		EscribirLog "Opción:Modificar Usuario > Campo:Número UID > De $UID_ANTERIOR a $UID_NUMBER" "$UID_NUMBER" "usermod -u $UID_NUMBER $USER;";;
+		
+		4)
+		EscribirLog "Opción:Modificar Usuario > Campo:GID principal" "4" "none"
+		GID_ANTERIOR="$(getent passwd $USER | cut -d: -f4)";
+		read -p "  Nuevo GID principal: " GID_PRINCIPAL;
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK usermod -g $GID_PRINCIPAL $USER;
+		EscribirLog "Opción:Modificar Usuario > Campo:GID principal > De $GID_ANTERIOR a $GID_PRINCIPAL" "$GID_PRINCIPAL" "usermod -g $GID_PRINCIPAL $USER;";;
+		
+		5)
+		EscribirLog "Opción:Modificar Usuario > Campo:GID adicional(es)" "5" "none"
+		read -p "  Nuevo GID adicionales: " GID_ADICIONALES;
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK usermod -G $GID_ADICIONALES $USER;
+		EscribirLog "Opción:Modificar Usuario > Campo:GID adicional(es) > A $GID_ADICIONALES" "$GID_ADICIONALES" "usermod -G $GID_ADICIONALES $USER;";;
+		
+		6)
+		EscribirLog "Opción:Modificar Usuario > Campo:Shell" "6" "none"
+		SHELL_ANTERIOR="$(getent passwd $USER | cut -d: -f7)";
+		read -p "  Nuevo Shell: " SHELL;
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK usermod -s $SHELL $USER;
+		EscribirLog "Opción:Modificar Usuario > Campo:Shell > De $SHELL_ANTERIOR a $SHELL" "$SHELL" "usermod -u $SHELL $USER;";;
+		
+		7)
+		EscribirLog "Opción:Modificar Usuario > Campo:Directorio" "7" "none"
+		DIRECTORIO_ANTERIOR="$(sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK getent passwd $USER | cut -d: -f6)";
+		read -p "  Nuevo directorio: " DIRECTORIO;
+		if [ -d $DIRECTORIO ];
+		then
+			echo "   No se puede usar este directorio, porque ya existe.";
+		else
+			DIRECTORIO_ANTERIOR="$(sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK eval echo ~$USER)";
+			sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK rm -r $DIRECTORIO_ANTERIOR;
+			sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK usermod -d $DIRECTORIO $USER;
+			sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK mkdir $DIRECTORIO;
+			sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK chown $USER $DIRECTORIO;
+			echo " Directorio creado correctamente.";
+			EscribirLog "Opción:Modificar Usuario > Campo:Directorio > De $DIRECTORIO_ANTERIOR a $DIRECTORIO" "$DIRECTORIO" "usermod -u $DIRECTORIO $USER;";
+		fi;;
+
+
+		*) 
+		EscribirLog "Opción:Modificar Usuario > Opción inválida" "?" "none"
+		echo " Opción ingresada no valida.";;
+	
+		esac
+		echo;
+	else
+		EscribirLog "Opción:Modificar Usuario > No se encontró el usuario: $USER" "$USER" "none"
+		echo " No se encontró el usuario";
+	fi
+	echo;
+}
+
+
+
+# --------
+# Opción 3
+function BorrarUsuario {
+	EscribirLog "Opción:Borrar Usuario" "$USER" "none"
+	read -p " Nombre de usuario: " USER;
+	echo;
+	ID_USER="$(sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK id -u $USER)";
+	if [ $ID_USER -gt 1 ]; 
+	then
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK deluser --remove-home $USER;
+		EscribirLog "Opción:Borrar Usuario > Se borró $USER" "$USER" "deluser --remove-home $USER;";
+		echo;
+		echo " Usuario $USER borrado";
+	else
+		EscribirLog "Opción:Borrar Usuario > No se encontró el usuario $USER" "$USER" "none";
+		echo " No se encontró el usuario";
+	fi
+}
+
+
+
+# --------
+# Opción 4
+function EstablecerContrasena {
+	EscribirLog "Opción:Establecer Contraseña" "none" "none";
+	read -p " Nombre de usuario: " USER;
+	echo;
+	ID_USER="$(sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK id -u $USER)";
+	if [ $ID_USER -gt 1 ]; 
+	then
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK passwd $USER;
+		EscribirLog "Opción:Establecer Contraseña > Se estableció la contraseña para $USER" "none" "passwd $USER;";
+	else
+		echo " No se encontró el usuario";
+		EscribirLog "Opción:Establecer Contraseña > No se encontró el usuario $USER" "none" "none";
+	fi
+	echo;
+}
+
+
+
+# --------
+# Opción 5
+function CrearGrupo {
+	EscribirLog "Opción:Crear grupo" "none" "none";
+	echo " Complete el formulario:";
+	read -p "  Nombre del grupo: " NAME;
+	if sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK grep -q $NAME /etc/group ;
+	then
+		EscribirLog "Opción:Crear grupo > No se creó, porque ya existía" "$NAME" "grep -q $NAME /etc/group";
+		echo " Ya existe el grupo"
+		return 0;
+	fi;
+	read -p "  GID (opcional): " GID_NUMBER;
+	if [ -z $GID_NUMBER ];
+	then
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK groupadd $NAME;
+		EscribirLog "Opción:Crear grupo > Se creó $NAME" "$NAME" "groupadd $NAME;";
+	else
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK groupadd $NAME -g $GID_NUMBER;
+		EscribirLog "Opción:Crear grupo > Se creó $NAME" "$NAME" "groupadd $NAME -g $GID_NUMBER;";
+	fi
+	echo;
+	echo " Grupo $NAME creado correctamente";
+}
+
+
+
+# --------
+# Opción 6
+function BorrarGrupo {
+	EscribirLog "Opción:Borrar grupo" "none" "none";
+	read -p " Nombre del grupo: " NAME;
+	if sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK grep -q $NAME /etc/group ;
+	then
+		sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK groupdel $NAME;
+		echo " Grupo $NAME borrado correctamente";
+		EscribirLog "Opción:Borrar grupo > Se borró $NAME" "$NAME" "groupdel $NAME;";
+	else
+		echo " No existe el grupo $NAME";
+		EscribirLog "Opción:Borrar grupo > No se borró, porque no existe $NAME" "$NAME" "none";
+	fi;
+}
+
+
+# ---------------
+# Opción inválida
+function OpcionInvalida {
+	echo " Opción ingresada no valida, intentelo de nuevo";
+	EscribirLog "Se digitó una opción no valida" "none" "none";
+}
+
+
+# ---------------- #
+# Menú de opciones #
+function MostrarMenu {
+	echo -e $BOLD;
+	echo " Menú de opciones"
+	echo -e $NOTBOLD;
+	echo "  [1] Crear usuario"
+	echo "  [2] Modificar usuario"
+	echo "  [3] Borrar usuario"
+	echo "  [4] Establecer contraseña a usuario"
+	echo "  [5] Crear grupo"
+	echo "  [6] Borrar grupo"
+	echo "  [7] Salir"
+	echo;
+	read -p " Ingrese una opción: " OPCION
+	echo;
+	case $OPCION in
+	1)
+	AgregarUsuario;;
+
+	2)
+	ModificarUsuario;;
+
+	3) 
+	BorrarUsuario;;
+	
+	4) 
+	EstablecerContrasena;;
+	
+	5) 
+	CrearGrupo;;
+	
+	6) 
+	BorrarGrupo;;
+	
+	7)
+	SALIR=1;;
+	
+	*) 
+	OpcionInvalida;;
+	
+	esac
+	echo
+}
+
+
+
+
+clear;
+
+# Variables de colores
+WHITE="\033[1;35m";
+BOLD="\e[1m";
+NOTBOLD="\e[21m";
+RESET="\e[0m";
+BLINK="\e[5m";
+
+# Inicio de la ejecución en pantalla
+echo " De la máquina remota:";
+SALIR=0;
+EscribirLog "Se inició el programa" "None" "None"
+while [ $SALIR -eq 0 ]
+do
+	read -p "   Usuario: " USER_WORK;
+	read -p "        IP: " IP_WORK;
+	# USER_WORK=root;
+	# IP_WORK=192.168.100.4;
+	echo -n "  Password: " ;
+	read -s PASS_WORK;
+	echo;
+	TESTING="$(sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK id -u root)";
+	if [[ ! -z $TESTING ]]; then
+		echo " Conexión establecida";
+		EscribirLog "Conexión establecida a la máquina remota" "None" "sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK id -u root"
+		SALIR=1;
+	else
+		echo " Conexión NO establecida ($TESTING), intentelo de nuevo.";
+		EscribirLog "No se pudo conectar a la máquina remota" "None" "sshpass -p $PASS_WORK ssh $USER_WORK@$IP_WORK id -u root"
+		echo;
+	fi
+done;
+
+SALIR=0;
+while [ $SALIR -eq 0 ]
+do
+	MostrarMenu;
+done;
+
+echo " Programa cerrado.";
+echo;
+EscribirLog "Se cerró el programa" "None" "None"
+
+# última línea de código 

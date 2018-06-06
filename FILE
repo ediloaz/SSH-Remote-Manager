@@ -1,0 +1,287 @@
+Fecha y hora | Evento (E) || Entrada (I) || Comando ejecutado (c)
+
+lun 04 jun 2018 15:13:24  |  (E) Se inició el programa || (I) None || (c) None
+lun 04 jun 2018 15:13:27  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+lun 04 jun 2018 15:16:13  |  (E) Se inició el programa || (I) None || (c) None
+lun 04 jun 2018 15:16:14  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+lun 04 jun 2018 15:16:38  |  (E) Se digitó una opción no valida || (I) none || (c) none
+lun 04 jun 2018 15:16:39  |  (E) Se cerró el programa || (I) None || (c) None
+lun 04 jun 2018 15:16:41  |  (E) Se inició el programa || (I) None || (c) None
+lun 04 jun 2018 15:16:42  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+lun 04 jun 2018 15:17:20  |  (E) Se cerró el programa || (I) None || (c) None
+lun 04 jun 2018 15:17:22  |  (E) Se inició el programa || (I) None || (c) None
+lun 04 jun 2018 15:17:23  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+lun 04 jun 2018 15:17:50  |  (E) Se inició el programa || (I) None || (c) None
+lun 04 jun 2018 15:17:51  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+lun 04 jun 2018 15:18:17  |  (E) Se cerró el programa || (I) None || (c) None
+lun 04 jun 2018 15:18:21  |  (E) Se inició el programa || (I) None || (c) None
+lun 04 jun 2018 15:18:23  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+lun 04 jun 2018 15:18:30  |  (E) Se inició el programa || (I) None || (c) None
+lun 04 jun 2018 15:18:31  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+lun 04 jun 2018 15:18:41  |  (E) Se inició el programa || (I) None || (c) None
+lun 04 jun 2018 15:18:43  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+lun 04 jun 2018 15:21:37  |  (E) Se inició el programa || (I) None || (c) None
+lun 04 jun 2018 15:21:39  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+lun 04 jun 2018 15:21:42  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+lun 04 jun 2018 15:22:15  |  (E) Opción:Agregar Usuario >  Agregado:kate || (I) none || (c) useradd -c comentario -u 2007 -g 3000 -G 4000,5000 kate;
+lun 04 jun 2018 15:22:53  |  (E) Opción:Borrar Usuario || (I) root || (c) none
+lun 04 jun 2018 15:22:57  |  (E) Opción:Borrar Usuario > No se encontró el usuario users || (I) users || (c) none
+lun 04 jun 2018 15:23:03  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+lun 04 jun 2018 15:23:05  |  (E) Opción:Modificar Usuario > No se encontró el usuario: Kate || (I) Kate || (c) none
+lun 04 jun 2018 15:23:08  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+lun 04 jun 2018 15:23:09  |  (E) Opción:Modificar Usuario > Usuario escogido: kate || (I) kate || (c) none
+lun 04 jun 2018 15:23:18  |  (E) Opción:Modificar Usuario > Campo:Directorio || (I) 7 || (c) none
+lun 04 jun 2018 15:23:23  |  (E) Opción:Modificar Usuario > Campo:Directorio > De /home/kate a /home/kate || (I) /home/kate || (c) usermod -u /home/kate kate;
+lun 04 jun 2018 15:23:44  |  (E) Opción:Establecer Contraseña || (I) none || (c) none
+lun 04 jun 2018 15:23:52  |  (E) Opción:Establecer Contraseña > Se estableció la contraseña para kate || (I) none || (c) passwd kate;
+lun 04 jun 2018 15:23:57  |  (E) Opción:Establecer Contraseña || (I) none || (c) none
+lun 04 jun 2018 15:24:01  |  (E) Opción:Establecer Contraseña > Se estableció la contraseña para kate || (I) none || (c) passwd kate;
+lun 04 jun 2018 15:24:17  |  (E) Se digitó una opción no valida || (I) none || (c) none
+lun 04 jun 2018 15:24:32  |  (E) Opción:Crear grupo || (I) none || (c) none
+lun 04 jun 2018 15:24:35  |  (E) Opción:Crear grupo > No se creó, porque ya existía || (I) kate || (c) grep -q kate /etc/group
+lun 04 jun 2018 15:24:48  |  (E) Opción:Crear grupo || (I) none || (c) none
+lun 04 jun 2018 15:24:53  |  (E) Opción:Crear grupo > Se creó kate1 || (I) kate1 || (c) groupadd kate1;
+lun 04 jun 2018 15:24:59  |  (E) Opción:Borrar grupo || (I) none || (c) none
+lun 04 jun 2018 15:25:00  |  (E) Opción:Borrar grupo > Se borró kate1 || (I) kate1 || (c) groupdel kate1;
+lun 04 jun 2018 15:25:06  |  (E) Opción:Borrar grupo || (I) none || (c) none
+lun 04 jun 2018 15:25:08  |  (E) Opción:Borrar grupo > Se borró kate || (I) kate || (c) groupdel kate;
+lun 04 jun 2018 15:25:13  |  (E) Opción:Borrar Usuario || (I) kate || (c) none
+lun 04 jun 2018 15:25:16  |  (E) Opción:Borrar Usuario > Se borró kate || (I) kate || (c) deluser --remove-home kate;
+lun 04 jun 2018 15:25:40  |  (E) Se cerró el programa || (I) None || (c) None
+lun 04 jun 2018 15:26:00  |  (E) Se inició el programa || (I) None || (c) None
+lun 04 jun 2018 15:26:02  |  (E) Opción:Borrar Usuario || (I) root || (c) none
+lun 04 jun 2018 15:26:06  |  (E) Opción:Borrar Usuario > No se encontró el usuario userEdi || (I) userEdi || (c) none
+lun 04 jun 2018 15:26:08  |  (E) Se digitó una opción no valida || (I) none || (c) none
+lun 04 jun 2018 15:26:10  |  (E) Opción:Borrar Usuario || (I) userEdi || (c) none
+lun 04 jun 2018 15:26:13  |  (E) Opción:Borrar Usuario > Se borró UserEdi || (I) UserEdi || (c) deluser --remove-home UserEdi;
+lun 04 jun 2018 15:26:19  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 03:19:40  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 03:19:43  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 04:19:50  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 04:19:51  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 04:20:07  |  (E) Opción:Agregar Usuario > Agregado:UserRoot || (I) none || (c) useradd -c  -u 1101 -g 0 UserRoot;
+mar 05 jun 2018 04:20:12  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 04:20:51  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 04:20:52  |  (E) Opción:Establecer Contraseña || (I) none || (c) none
+mar 05 jun 2018 04:20:58  |  (E) Opción:Establecer Contraseña > Se estableció la contraseña para UserRoot || (I) none || (c) passwd UserRoot;
+mar 05 jun 2018 04:24:15  |  (E) Opción:Establecer Contraseña || (I) none || (c) none
+mar 05 jun 2018 04:24:16  |  (E) Opción:Establecer Contraseña > No se encontró el usuario roo || (I) none || (c) none
+mar 05 jun 2018 04:24:19  |  (E) Opción:Establecer Contraseña || (I) none || (c) none
+mar 05 jun 2018 04:24:20  |  (E) Opción:Establecer Contraseña > No se encontró el usuario root || (I) none || (c) none
+mar 05 jun 2018 04:24:23  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 04:59:25  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 05:00:31  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 08:31:34  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 08:31:53  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 08:41:42  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 08:41:44  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 08:42:32  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 08:43:27  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 08:43:43  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 08:44:11  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 08:53:40  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 08:53:43  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 08:54:06  |  (E) Opción:Agregar Usuario > Agregado:ediDesdeS || (I) none || (c) useradd -c Edi desde el SERVER -u 1103 -g 1000 ediDesdeS;
+mar 05 jun 2018 08:54:06  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 08:54:55  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 09:05:30  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:06:07  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 09:06:24  |  (E) Opción:Modificar Usuario > No se encontró el usuario: edi02 || (I) edi02 || (c) none
+mar 05 jun 2018 09:06:39  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 09:08:38  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:09:08  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 09:09:11  |  (E) Opción:Modificar Usuario > Usuario escogido: edi02 || (I) edi02 || (c) none
+mar 05 jun 2018 09:09:14  |  (E) Opción:Modificar Usuario > Campo:Comentario || (I) 2 || (c) none
+mar 05 jun 2018 09:09:23  |  (E) Opción:Modificar Usuario > Campo:Comentario > De ,,, a EdiDesde el server || (I) EdiDesde el server || (c) usermod -c EdiDesde el server edi02;;
+mar 05 jun 2018 09:14:25  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:15:24  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:15:29  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 09:16:36  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:16:38  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 09:16:54  |  (E) Opción:Modificar Usuario > Usuario escogido: edi03 || (I) edi03 || (c) none
+mar 05 jun 2018 09:16:57  |  (E) Opción:Modificar Usuario > Modificar: Nombre para loguear || (I) 1 || (c) none
+mar 05 jun 2018 09:16:59  |  (E) Opción:Modificar Usuario > Se modificó el nombre de usuario de edi03 a edi003 || (I) edi003 || (c) usermod -l edi003 edi03;
+mar 05 jun 2018 09:17:27  |  (E) Se digitó una opción no valida || (I) none || (c) none
+mar 05 jun 2018 09:17:28  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 09:17:32  |  (E) Opción:Modificar Usuario > Usuario escogido: edi03 || (I) edi03 || (c) none
+mar 05 jun 2018 09:17:35  |  (E) Opción:Modificar Usuario > Campo:Comentario || (I) 2 || (c) none
+mar 05 jun 2018 09:17:41  |  (E) Opción:Modificar Usuario > Campo:Comentario > De edi03 a EdiServer || (I) EdiServer || (c) usermod -c EdiServer edi03;;
+mar 05 jun 2018 09:21:12  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:21:15  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 09:22:15  |  (E) Opción:Agregar Usuario > Agregado:Edi04 || (I) none || (c) useradd -c Edi del Server -u 1108 -g 1000 Edi04;
+mar 05 jun 2018 09:22:17  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 09:24:16  |  (E) Se digitó una opción no valida || (I) none || (c) none
+mar 05 jun 2018 09:24:18  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 09:24:23  |  (E) Opción:Modificar Usuario > Usuario escogido: edi02 || (I) edi02 || (c) none
+mar 05 jun 2018 09:24:24  |  (E) Opción:Modificar Usuario > Modificar: Nombre para loguear || (I) 1 || (c) none
+mar 05 jun 2018 09:24:28  |  (E) Opción:Modificar Usuario > Se modificó el nombre de usuario de edi02 a edi002 || (I) edi002 || (c) usermod -l edi002 edi02;
+mar 05 jun 2018 09:24:36  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 09:24:40  |  (E) Opción:Modificar Usuario > Usuario escogido: edi002 || (I) edi002 || (c) none
+mar 05 jun 2018 09:24:42  |  (E) Opción:Modificar Usuario > Campo:Número UID || (I) 3 || (c) none
+mar 05 jun 2018 09:24:49  |  (E) Opción:Modificar Usuario > Campo:Número UID > De  a 2580 || (I) 2580 || (c) usermod -u 2580 edi002;
+mar 05 jun 2018 09:24:57  |  (E) Opción:Borrar Usuario || (I) edi002 || (c) none
+mar 05 jun 2018 09:25:02  |  (E) Opción:Borrar Usuario > Se borró edi002 || (I) edi002 || (c) deluser --remove-home edi002;
+mar 05 jun 2018 09:26:04  |  (E) Opción:Crear grupo || (I) none || (c) none
+mar 05 jun 2018 09:26:15  |  (E) Opción:Crear grupo > Se creó Grupose || (I) Grupose || (c) groupadd Grupose -g 5000;
+mar 05 jun 2018 09:26:21  |  (E) Opción:Borrar grupo || (I) none || (c) none
+mar 05 jun 2018 09:26:34  |  (E) Opción:Borrar grupo > Se borró Grupose || (I) Grupose || (c) groupdel Grupose;
+mar 05 jun 2018 09:26:55  |  (E) Opción:Establecer Contraseña || (I) none || (c) none
+mar 05 jun 2018 09:27:05  |  (E) Opción:Establecer Contraseña > Se estableció la contraseña para edi03 || (I) none || (c) passwd edi03;
+mar 05 jun 2018 09:27:40  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 09:27:57  |  (E) Opción:Agregar Usuario > Agregado:edi02 || (I) none || (c) useradd -c edi 02 -u 4000 -g 3000 edi02;
+mar 05 jun 2018 09:27:59  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 09:28:31  |  (E) Se digitó una opción no valida || (I) none || (c) none
+mar 05 jun 2018 09:28:40  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:28:50  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 09:29:07  |  (E) Opción:Agregar Usuario > Agregado:edi03 || (I) none || (c) useradd -c edi 03 -u 4000 -g 3000 edi03;
+mar 05 jun 2018 09:29:12  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 09:34:47  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:34:50  |  (E) Opción:Borrar Usuario || (I) root || (c) none
+mar 05 jun 2018 09:35:01  |  (E) Opción:Borrar Usuario > Se borró edi04 || (I) edi04 || (c) deluser --remove-home edi04;
+mar 05 jun 2018 09:35:06  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 09:35:24  |  (E) Opción:Agregar Usuario >  Agregado:edi04 || (I) none || (c) useradd -c ed -u 4000 -g 3000 -G 1004 edi04;
+mar 05 jun 2018 09:35:26  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 09:37:16  |  (E) Se digitó una opción no valida || (I) none || (c) none
+mar 05 jun 2018 09:37:21  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 09:37:46  |  (E) Opción:Agregar Usuario > Agregado:edi04 || (I) none || (c) useradd -c edi04 -u 4000 -g 4000 edi04;
+mar 05 jun 2018 09:37:48  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 09:38:04  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 09:38:15  |  (E) Opción:Modificar Usuario > Usuario escogido: edi05 || (I) edi05 || (c) none
+mar 05 jun 2018 09:38:18  |  (E) Opción:Modificar Usuario > Campo:Comentario || (I) 2 || (c) none
+mar 05 jun 2018 09:38:30  |  (E) Opción:Modificar Usuario > Campo:Comentario > De comen a Tatiana la bonita || (I) Tatiana la bonita || (c) usermod -c Tatiana la bonita edi05;;
+mar 05 jun 2018 09:38:55  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 09:38:58  |  (E) Opción:Modificar Usuario > Usuario escogido: edi05 || (I) edi05 || (c) none
+mar 05 jun 2018 09:39:00  |  (E) Opción:Modificar Usuario > Campo:Comentario || (I) 2 || (c) none
+mar 05 jun 2018 09:39:06  |  (E) Opción:Modificar Usuario > Campo:Comentario > De comen a TatianaLaBonita || (I) TatianaLaBonita || (c) usermod -c TatianaLaBonita edi05;;
+mar 05 jun 2018 09:40:12  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 09:41:15  |  (E) Opción:Agregar Usuario > Agregado:edi06 || (I) none || (c) useradd -c edi06 -u 1200 -g 4200 edi06;
+mar 05 jun 2018 09:41:19  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 09:41:38  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 09:41:54  |  (E) Opción:Agregar Usuario > Agregado:edi06 || (I) none || (c) useradd -c edi06 -u 2400 -g 5000 edi06;
+mar 05 jun 2018 09:41:57  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 09:43:50  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:43:52  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 09:44:47  |  (E) Opción:Agregar Usuario >  Agregado:edi06 || (I) none || (c) useradd -c edi06 -u 1200 -g 1001 -G 1002 edi06;
+mar 05 jun 2018 09:44:48  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 09:46:03  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 09:46:08  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:48:15  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 09:48:16  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 09:48:18  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:48:29  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:48:32  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 09:49:19  |  (E) Opción:Agregar Usuario >  Agregado:edi06 || (I) none || (c) useradd -c edi06 -u 3000 -g 3000 -G 1002 edi06;
+mar 05 jun 2018 09:52:29  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 09:52:32  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:52:43  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 09:52:47  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 09:52:52  |  (E) Opción:Modificar Usuario > Usuario escogido: edi06 || (I) edi06 || (c) none
+mar 05 jun 2018 09:52:54  |  (E) Opción:Modificar Usuario > Campo:Comentario || (I) 2 || (c) none
+mar 05 jun 2018 09:53:04  |  (E) Opción:Modificar Usuario > Campo:Comentario > De edi06 a Holliiiiiiiiiiiiis || (I) Holliiiiiiiiiiiiis || (c) usermod -c Holliiiiiiiiiiiiis edi06;;
+mar 05 jun 2018 09:59:21  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 16:58:13  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:03:53  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:05:14  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:05:19  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 17:05:30  |  (E) Opción:Modificar Usuario > Usuario escogido: edi06 || (I) edi06 || (c) none
+mar 05 jun 2018 17:06:23  |  (E) Opción:Modificar Usuario > Campo:Comentario || (I) 2 || (c) none
+mar 05 jun 2018 17:07:07  |  (E) Opción:Modificar Usuario > Campo:Comentario > De Holliiiiiiiiiiiiis a holis edi || (I) holis edi || (c) usermod -c holis edi edi06;;
+mar 05 jun 2018 17:11:45  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:11:48  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:11:50  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 17:11:53  |  (E) Opción:Modificar Usuario > Usuario escogido: edi06 || (I) edi06 || (c) none
+mar 05 jun 2018 17:11:55  |  (E) Opción:Modificar Usuario > Campo:Comentario || (I) 2 || (c) none
+mar 05 jun 2018 17:11:59  |  (E) Opción:Modificar Usuario > Campo:Comentario > De Holliiiiiiiiiiiiis a ho la || (I) ho la || (c) usermod -c ho la edi06;;
+mar 05 jun 2018 17:17:56  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:18:05  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:18:09  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 17:18:19  |  (E) Opción:Agregar Usuario > Agregado:edi || (I) none || (c) useradd -c  -u  -g  edi;
+mar 05 jun 2018 17:18:51  |  (E) Se digitó una opción no valida || (I) none || (c) none
+mar 05 jun 2018 17:18:54  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 17:19:00  |  (E) Opción:Agregar Usuario > Agregado:edi07 || (I) none || (c) useradd -c  -u  -g  edi07;
+mar 05 jun 2018 17:19:24  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 17:19:25  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:19:30  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:19:32  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 17:19:37  |  (E) Opción:Agregar Usuario > Agregado:edi07 || (I) none || (c) useradd -c  -u  -g  edi07;
+mar 05 jun 2018 17:20:30  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 17:20:36  |  (E) Opción:Modificar Usuario > Usuario escogido: edi05 || (I) edi05 || (c) none
+mar 05 jun 2018 17:20:38  |  (E) Opción:Modificar Usuario > Campo:Comentario || (I) 2 || (c) none
+mar 05 jun 2018 17:20:44  |  (E) Opción:Modificar Usuario > Campo:Comentario > De TatianaLaBonita a Tatiana la bonita || (I) Tatiana la bonita || (c) usermod -c Tatiana la bonita edi05;;
+mar 05 jun 2018 17:21:02  |  (E) Opción:Borrar Usuario || (I) edi05 || (c) none
+mar 05 jun 2018 17:21:09  |  (E) Opción:Borrar Usuario > Se borró edi06 || (I) edi06 || (c) deluser --remove-home edi06;
+mar 05 jun 2018 17:21:10  |  (E) Opción:Borrar Usuario || (I) edi06 || (c) none
+mar 05 jun 2018 17:21:20  |  (E) Opción:Borrar Usuario > Se borró edi05 || (I) edi05 || (c) deluser --remove-home edi05;
+mar 05 jun 2018 17:21:23  |  (E) Opción:Borrar Usuario || (I) edi05 || (c) none
+mar 05 jun 2018 17:21:29  |  (E) Opción:Borrar Usuario > Se borró edi03 || (I) edi03 || (c) deluser --remove-home edi03;
+mar 05 jun 2018 17:21:40  |  (E) Opción:Borrar Usuario || (I) edi03 || (c) none
+mar 05 jun 2018 17:21:47  |  (E) Opción:Borrar Usuario > Se borró edi01 || (I) edi01 || (c) deluser --remove-home edi01;
+mar 05 jun 2018 17:22:11  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 17:22:16  |  (E) Opción:Modificar Usuario > No se encontró el usuario: a || (I) a || (c) none
+mar 05 jun 2018 17:22:18  |  (E) Opción:Borrar Usuario || (I) a || (c) none
+mar 05 jun 2018 17:22:22  |  (E) Opción:Borrar Usuario > Se borró Temp || (I) Temp || (c) deluser --remove-home Temp;
+mar 05 jun 2018 17:22:41  |  (E) Se digitó una opción no valida || (I) none || (c) none
+mar 05 jun 2018 17:22:41  |  (E) Opción:Borrar Usuario || (I) Temp || (c) none
+mar 05 jun 2018 17:22:46  |  (E) Opción:Borrar Usuario > Se borró temp || (I) temp || (c) deluser --remove-home temp;
+mar 05 jun 2018 17:25:40  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:26:01  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:26:25  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:27:30  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:27:36  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:27:47  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:28:00  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:28:39  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:28:43  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:30:41  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 17:30:54  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:26:16  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:26:22  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:26:23  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 18:26:39  |  (E) Opción:Modificar Usuario > Usuario escogido: edisson || (I) edisson || (c) none
+mar 05 jun 2018 18:27:18  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:27:21  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:30:31  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:30:34  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:31:02  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 18:31:05  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:31:14  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:31:29  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 18:31:30  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:31:33  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:31:55  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 18:31:57  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:32:00  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:32:09  |  (E) Se digitó una opción no valida || (I) none || (c) none
+mar 05 jun 2018 18:32:09  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 18:32:11  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:32:14  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:32:29  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:32:31  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:32:43  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:38:14  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:39:10  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 18:39:11  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:39:14  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:41:19  |  (E) Se cerró el programa || (I) None || (c) None
+mar 05 jun 2018 18:41:22  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:41:26  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:41:50  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 18:43:53  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:43:57  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:44:03  |  (E) Opción:Modificar Usuario || (I) 2 || (c) ModificarUsuario()
+mar 05 jun 2018 18:44:09  |  (E) Opción:Modificar Usuario > Usuario escogido: edisson || (I) edisson || (c) none
+mar 05 jun 2018 18:44:44  |  (E) Opción:Modificar Usuario > Opción inválida || (I) ? || (c) none
+mar 05 jun 2018 18:45:17  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 18:46:37  |  (E) Opción:Agregar Usuario > Agregado:EDISS || (I) none || (c) useradd -c EDISSON LOPEZ DIAZ -u 5000 -g  EDISS;
+mar 05 jun 2018 18:46:40  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 18:47:43  |  (E) Opción:Agregar Usuario || (I) 1 || (c) AgregarUsuario()
+mar 05 jun 2018 18:48:00  |  (E) Opción:Agregar Usuario > Agregado:EDISSON || (I) none || (c) useradd -c EDISSON JOSUE LOPEZ DIAZ -u 5000 -g 1000 EDISSON;
+mar 05 jun 2018 18:48:02  |  (E) Opción:Agregar Usuario > No se pudo agregar || (I) none || (c) none
+mar 05 jun 2018 18:52:17  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:52:21  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 18:52:34  |  (E) Opción:Crear grupo || (I) none || (c) none
+mar 05 jun 2018 18:56:44  |  (E) Opción:Crear grupo > No se creó, porque ya existía || (I) 7 || (c) grep -q 7 /etc/group
+mar 05 jun 2018 19:24:49  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 19:53:17  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 19:53:39  |  (E) Se inició el programa || (I) None || (c) None
+mar 05 jun 2018 19:53:51  |  (E) Conexión establecida a la máquina remota || (I) None || (c) sshpass -p 3121 ssh root@192.168.100.4 id -u root
